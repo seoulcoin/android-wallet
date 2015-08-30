@@ -18,6 +18,8 @@
 package de.schildbach.wallet.ui;
 
 import org.bitcoinj.core.Address;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -44,8 +46,9 @@ public class WalletAddressDialogFragment extends DialogFragment
 
 	private static final String KEY_BITMAP = "bitmap";
 	private static final String KEY_ADDRESS = "address";
+    private static final Logger log = LoggerFactory.getLogger(WalletAddressDialogFragment.class);
 
-	public static void show(final FragmentManager fm, final Bitmap bitmap, final Address address)
+    public static void show(final FragmentManager fm, final Bitmap bitmap, final Address address)
 	{
 		instance(bitmap, address).show(fm, FRAGMENT_TAG);
 	}
@@ -100,7 +103,13 @@ public class WalletAddressDialogFragment extends DialogFragment
 				final Intent intent = new Intent(Intent.ACTION_SEND);
 				intent.setType("text/plain");
 				intent.putExtra(Intent.EXTRA_TEXT, address.toString());
-				startActivity(Intent.createChooser(intent, getString(R.string.bitmap_fragment_share)));
+                log.info("CHOI_DEBUG: address["+address.toString()+"] to share.");
+                try {
+                    startActivity(Intent.createChooser(intent, getString(R.string.bitmap_fragment_share)));
+                } catch (Exception e) {
+                    log.error("CHOI_DEBUG: [Share Activity Error]", e);
+                }
+
 			}
 		});
 

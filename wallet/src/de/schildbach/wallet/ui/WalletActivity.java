@@ -239,7 +239,8 @@ public final class WalletActivity extends AbstractWalletActivity
 		final Resources res = getResources();
 		final String externalStorageState = Environment.getExternalStorageState();
 
-		menu.findItem(R.id.wallet_options_exchange_rates).setVisible(res.getBoolean(R.bool.show_exchange_rates_option));
+        //todo: CHOI_DEBUG
+		//menu.findItem(R.id.wallet_options_exchange_rates).setVisible(res.getBoolean(R.bool.show_exchange_rates_option));
 		menu.findItem(R.id.wallet_options_restore_wallet).setEnabled(
 				Environment.MEDIA_MOUNTED.equals(externalStorageState) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(externalStorageState));
 		menu.findItem(R.id.wallet_options_backup_wallet).setEnabled(Environment.MEDIA_MOUNTED.equals(externalStorageState));
@@ -270,17 +271,19 @@ public final class WalletActivity extends AbstractWalletActivity
 				AddressBookActivity.start(this);
 				return true;
 
-			case R.id.wallet_options_exchange_rates:
-				startActivity(new Intent(this, ExchangeRatesActivity.class));
-				return true;
+            //todo: CHOI_DEBUG
+//			case R.id.wallet_options_exchange_rates:
+//				startActivity(new Intent(this, ExchangeRatesActivity.class));
+//				return true;
 
 			case R.id.wallet_options_sweep_wallet:
 				SweepWalletActivity.start(this);
 				return true;
 
-			case R.id.wallet_options_network_monitor:
-				startActivity(new Intent(this, NetworkMonitorActivity.class));
-				return true;
+            //todo: CHOI_DEBUG
+//			case R.id.wallet_options_network_monitor:
+//				startActivity(new Intent(this, NetworkMonitorActivity.class));
+//				return true;
 
 			case R.id.wallet_options_restore_wallet:
 				showDialog(DIALOG_RESTORE_WALLET);

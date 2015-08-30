@@ -920,8 +920,11 @@ public final class SendCoinsFragment extends Fragment
 
 				if (directPaymentEnableView.isChecked())
 					directPay(payment);
+                log.info("CHOI_DEBUG SendCoinsOfflineTask.OnSuccess directPaymentEnableView.isChecked()="+directPaymentEnableView.isChecked());
 
 				application.broadcastTransaction(sentTransaction);
+
+                log.info("CHOI_DEBUG application.broadcastTransaction");
 
 				final ComponentName callingActivity = activity.getCallingActivity();
 				if (callingActivity != null)

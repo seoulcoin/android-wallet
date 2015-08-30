@@ -62,7 +62,9 @@ public class Configuration
 	public static final String PREFS_KEY_REMIND_BACKUP = "remind_backup";
 	private static final String PREFS_KEY_LAST_BACKUP = "last_backup";
 
-	private static final int PREFS_DEFAULT_BTC_SHIFT = 3;
+    private static final int PREFS_DEFAULT_BTC_SHIFT = 0;
+    //todo:CHOI_DEBUG
+	//private static final int PREFS_DEFAULT_BTC_SHIFT = 3;
 	private static final int PREFS_DEFAULT_BTC_PRECISION = 2;
 
 	private static final Logger log = LoggerFactory.getLogger(Configuration.class);

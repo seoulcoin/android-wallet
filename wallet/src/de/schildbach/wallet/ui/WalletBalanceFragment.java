@@ -104,7 +104,8 @@ public final class WalletBalanceFragment extends Fragment
 	{
 		super.onViewCreated(view, savedInstanceState);
 
-		final boolean showExchangeRatesOption = getResources().getBoolean(R.bool.show_exchange_rates_option);
+        //todo: CHOI_DEBUG
+		final boolean showExchangeRatesOption = false ; //getResources().getBoolean(R.bool.show_exchange_rates_option);
 
 		viewBalance = view.findViewById(R.id.wallet_balance);
 		if (showExchangeRatesOption)
