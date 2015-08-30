@@ -1,4 +1,5 @@
-Welcome to _Bitcoin Wallet_, a standalone Bitcoin payment app for your Android device!
+Welcome to _Seoulcoin Wallet_, a standalone seoulcoin payment app for your Android device!
+It is schildbach's bitcoin wallet v4.36 customization for seoulcoin. Many configurations had been added for seoulcoin features. and more changes will be done for additional requirements.
 
 This project contains several sub-projects:
 
